@@ -9,7 +9,6 @@ export default class FeedPostPreview extends Component {
   }
 
   upvote = () => {
-    console.log(this.props.index);
     this.props.upvote(this.props.index)
   }
 
@@ -19,7 +18,7 @@ export default class FeedPostPreview extends Component {
 
   render(){
     const { icon, upvotes, title, username, subreddit, hours, timestamp } = this.props.post;
-    console.log(moment(timestamp))
+
     return (
         <div className="feed-post-preview">
           <div className="feed-post-votes">

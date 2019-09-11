@@ -12,7 +12,7 @@ function Post (props){
   return(
     <div>
       <h3>{props.post.title}</h3>
-      <p>This posts's id: {props.post.id}</p>
+      <p>{props.post.text}</p>
     </div>
   )
 }

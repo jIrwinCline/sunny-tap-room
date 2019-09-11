@@ -34,7 +34,7 @@ class App extends Component{
 
   addPostToList = (post) => {
     let temp = this.state.feedPosts.slice()
-    post.timestamp = moment(moment()).fromNow() //this will be retooled in the future for when state changes and instead inside moment() would be a time stamp, and the logic here will live in the state change.
+ //this will be retooled in the future for when state changes and instead inside moment() would be a time stamp, and the logic here will live in the state change.
     temp.push(post)
     temp.sort((a, b) => (a.upvotes < b.upvotes) ? 1 : -1)
     this.setState({ feedPosts: temp})
@@ -55,18 +55,19 @@ class App extends Component{
   }
 
   handleSelectPost = (key) => {
+    // key comes in as a string, so we convert it to an Integer
     const paramsId = parseInt(key);
+    // grab the state and make a shallow copy
     let temp = this.state.feedPosts.slice();
-    // return temp[key];
+
+    // filter through the array and check all posts to see if they have a matching id to paramsId
     const post = temp.filter( post => {
-      console.log(post.id);
-      console.log(paramsId);
+      // if the id matches, stop looking and just return that post
       if (post.id === paramsId){
         return post
       }
-
     })
-    console.log("this is the handleSelectPost post:", post);
+    // const post basically is an array returned from filter, but we only have one thing in the array, so just return the first thing from the array
     return post[0]
   }
 
