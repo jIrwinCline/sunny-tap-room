@@ -3,6 +3,7 @@ import KegList from './KegList.js'
 import AddKeg from './AddKeg.js'
 import LowKegsList from './LowKegsList.js'
 import { v4 } from 'uuid';
+import { BrowserRouter, Link, Switch, Route } from 'react-router-dom'
 
 var masterKegList = [
   {
@@ -80,7 +81,6 @@ export default class Body extends Component {
     super(props)
     this.state = {
       kegs: masterKegList,
-
     }
   }
 
@@ -97,12 +97,17 @@ export default class Body extends Component {
   }
 
 
+
+
   render() {
     return (
       <div>
-      <KegList kegs={this.state.kegs} soldPint={this.soldPint}/>
-      <LowKegsList/>
-      <AddKeg/>
+        <BrowserRouter>
+          <Switch>
+            <Route exact path="/" render={()=><KegList kegs={this.state.kegs} soldPint={this.soldPint}/>} />
+            <Route path="/add_keg" render={()=><AddKeg addKegToList={this.addKegToList}/>} />
+          </Switch>
+        </BrowserRouter>
       </div>
     );
   }
