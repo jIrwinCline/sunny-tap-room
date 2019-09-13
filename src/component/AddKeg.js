@@ -29,8 +29,8 @@ export default class AddKeg extends Component {
   }
 
   render(){
-    const stateChange = this.state.stateChange;
-    if(stateChange === true) {
+
+    if(this.state.stateChange === true) {
       return <Redirect to="/" />
     }
 
