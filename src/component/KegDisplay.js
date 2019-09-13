@@ -28,22 +28,41 @@ export default class KegDisplay extends Component {
       height: '400px',
       width: '20%',
     }
-    return (
-      <div style={cardStyles}>
-      <div className={"card " + priceColor} style={{ width: '18rem' }}>
-      <div className="card-body">
-      <div className='card-title'><h3>{name}</h3></div>
-      <div className='card-text'><h4>{brand}</h4></div>
-      <div className='card-text'><h4>{price}</h4></div>
-      <div className='card-text'>
-      <h4>{priceColor}</h4>
-      <h4>{fill}</h4>
-      </div>
-      <button onClick={this.soldPint}>Sold Pint!</button>
-      </div>
-      </div>
-      </div>
-    );
+    if (alcoholContent < 10) {
+      return (
+        <div style={cardStyles}>
+        <div className={"card " + priceColor} style={{ width: '18rem' }}>
+        <div className="card-body">
+        <div className='card-title'><h3>{name}</h3></div>
+        <div className='card-text'><h4>{brand}</h4></div>
+        <div className='card-text'><h4>{price}</h4></div>
+        <div className='card-text'>
+        <h4>{priceColor}</h4>
+        <h4>{fill}</h4>
+        </div>
+        <button onClick={this.soldPint}>Sold Pint!</button>
+        </div>
+        </div>
+        </div>
+      );
+    }else {
+      return (
+        <div style={cardStyles}>
+        <div className={"card " + priceColor} style={{ width: '18rem' }}>
+        <div className="card-body">
+        <div className='card-title'><h3>{name}</h3></div>
+        <div className='card-text'><h4>{brand}</h4>
+        <h4>{price}</h4>
+        <h4>{priceColor}</h4>
+        <h4>{fill}</h4>
+        </div>
+        <div className='card-footer'>HARD</div>
+        <button onClick={this.soldPint}>Sold Pint!</button>
+        </div>
+        </div>
+        </div>
+      );
+    }
   }
 }
 
