@@ -12,6 +12,13 @@ export default class KegDisplay extends Component {
     this.props.soldPint(this.props.index)
   }
 
+  colorBasedOnPrice = () => {
+    switch(color){
+      case "green":
+      return "green"
+    }
+  }
+
   render() {
     const { name, brand, price, alcoholContent, fill, priceColor, id } = this.props.keg;
 
@@ -23,7 +30,7 @@ export default class KegDisplay extends Component {
     }
     return (
       <div style={cardStyles}>
-      <div className='card' style={{ width: '18rem' }}>
+      <div className={"card " + priceColor} style={{ width: '18rem' }}>
       <div className="card-body">
       <div className='card-title'><h3>{name}</h3></div>
       <div className='card-text'><h4>{brand}</h4></div>
