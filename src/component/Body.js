@@ -96,7 +96,11 @@ export default class Body extends Component {
     this.setState({ kegs: temp })
   }
 
-
+  filterByLowFill = () => {
+    let temp = this.state.slice();
+    let filteredTemp = temp.filter((keg) => { keg.fill < 10 }  )
+    this.setState({ kegs: filteredTemp })
+  }
 
 
   render() {
