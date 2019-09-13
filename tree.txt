@@ -1,0 +1,9 @@
+header
+  -hpicture
+  -navbar
+body
+  -description
+  -kegDisplay
+  -lowKegs
+  -addKegForm
+footer
