@@ -107,10 +107,12 @@ export default class Body extends Component {
     return (
       <div>
         <BrowserRouter>
-          <Switch>
-            <Route exact path="/" render={()=><KegList kegs={this.state.kegs} soldPint={this.soldPint}/>} />
-            <Route path="/add_keg" render={()=><AddKeg callback={this.addKegToList}/>} />
-          </Switch>
+          <div>
+            <Switch>
+              <Route exact path="/" render={()=><KegList kegs={this.state.kegs} soldPint={this.soldPint}/>} />
+              <Route path="/add_keg" render={()=><AddKeg callback={this.addKegToList}/>} />
+            </Switch>
+          </div>
         </BrowserRouter>
       </div>
     );

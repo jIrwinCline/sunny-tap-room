@@ -24,13 +24,13 @@ export default class AddKeg extends Component {
       alcoholContent: _alcoholContent.value,
       fill: 124,
     })
-    console.log(_name);
     this.setState({ stateChange: true })
+    console.log(this.stateChange)
   }
 
   render(){
-
-    if(this.stateChange === true) {
+    const stateChange = this.state.stateChange;
+    if(stateChange === true) {
       return <Redirect to="/" />
     }
 
