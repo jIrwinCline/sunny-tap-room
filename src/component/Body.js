@@ -116,6 +116,12 @@ export default class Body extends Component {
     this.setState({ kegs: temp })
   }
 
+  refillKeg = (id) => {
+    let temp = this.state.kegs.slice();
+    temp[id].fill = 124;
+    this.setState({ kegs: temp })
+  }
+
   filterByLowFill = () => {
     let temp = this.state.kegs.slice();
     let lessThan10 = function(kegs){
@@ -134,7 +140,7 @@ export default class Body extends Component {
           <div>
           <HeaderNavbar filterByLowFill={this.filterByLowFill}/>
             <Switch>
-              <Route exact path="/" render={()=><KegList kegs={this.state.kegs} soldPint={this.soldPint} />} />
+              <Route exact path="/" render={()=><KegList kegs={this.state.kegs} soldPint={this.soldPint} refillKeg={this.refillKeg}/>} />
               <Route path="/employee/add_keg" render={()=><AddKeg callback={this.addKegToList}/>} />
             </Switch>
           </div>

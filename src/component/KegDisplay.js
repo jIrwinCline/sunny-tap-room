@@ -13,6 +13,10 @@ export default class KegDisplay extends Component {
     this.props.soldPint(this.props.index)
   }
 
+  refillKeg = () => {
+    this.props.refillKeg(this.props.index)
+  }
+
 
   render() {
     const { name, brand, price, alcoholContent, fill, priceColor, id } = this.props.keg;
@@ -36,6 +40,7 @@ export default class KegDisplay extends Component {
               {"Pints: " + fill}</p>
               </div>
               <button onClick={this.soldPint}>Sold Pint!</button>
+              <button className="sm" onClick={this.refillKeg}>Refill!</button>
             </div>
           </div>
         </div>
@@ -53,6 +58,7 @@ export default class KegDisplay extends Component {
         </div>
         <div className='card-footer'>HARD</div>
         <button onClick={this.soldPint}>Sold Pint!</button>
+        <button className="sm" onClick={this.refillKeg}>Refill!</button>
         </div>
         </div>
         </div>
