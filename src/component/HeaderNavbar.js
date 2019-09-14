@@ -30,7 +30,7 @@ var signStyles = {
   float: 'right',
 }
   return (
-    <div>
+    <div className='container'>
       <nav>
         <a style={logoStyle} href='/'><img style={logoStyle}  src={beerPic} /></a>
         <a style={aStyles} href='/'>Home</a>

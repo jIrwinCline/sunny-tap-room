@@ -27,13 +27,14 @@ export default class KegDisplay extends Component {
       display: 'inline-flex',
       height: 'auto',
       width: 'auto',
-      
+      paddingTop: '15px',
+
     }
     if (alcoholContent < 10) {
       return (
         <div style={cardStyles} className="col-sm-3">
         <div className={"card " + priceColor} style={{ width: '18rem' }}>
-        <img class="card-img-top" src={keg} alt="keg image"/>
+        <img class="card-img-top" style={{marginTop: '10px'}} src={keg} alt="keg image"/>
         <div className="card-body">
         <div className='card-title'><h6>{name}</h6></div>
         <div className='card-text'><p>{brand}</p></div>
@@ -51,7 +52,7 @@ export default class KegDisplay extends Component {
       return (
         <div style={cardStyles} className="col-sm-3">
         <div className={"card " + priceColor} style={{ width: '18rem' }}>
-        <img class="card-img-top" src={keg} alt="keg image"/>
+        <img class="card-img-top" style={{marginTop: '10px'}} src={keg} alt="keg image"/>
         <div className="card-body">
         <div className='card-title'><h6>{name}</h6></div>
         <div className='card-text'><p>{brand},{price},{priceColor}
