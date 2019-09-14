@@ -4,6 +4,7 @@ import AddKeg from './AddKeg.js'
 import LowKegsList from './LowKegsList.js'
 import { v4 } from 'uuid';
 import { BrowserRouter, Link, Switch, Route } from 'react-router-dom'
+import HeaderNavbar from './HeaderNavbar'
 
 var masterKegList = [
   {
@@ -116,8 +117,12 @@ export default class Body extends Component {
   }
 
   filterByLowFill = () => {
-    let temp = this.state.slice();
-    let filteredTemp = temp.filter((keg) => { keg.fill < 10 }  )
+    let temp = this.state.kegs.slice();
+    let lessThan10 = function(kegs){
+      return kegs.fill < 10;
+    }
+    let filteredTemp = temp.filter(lessThan10)
+    console.log(filteredTemp)
     this.setState({ kegs: filteredTemp })
   }
 
@@ -127,9 +132,10 @@ export default class Body extends Component {
       <div>
         <BrowserRouter>
           <div>
+          <HeaderNavbar filterByLowFill={this.filterByLowFill}/>
             <Switch>
-              <Route exact path="/" render={()=><KegList kegs={this.state.kegs} soldPint={this.soldPint} filterByLowFill={this.filterByLowFill}/>} />
-              <Route path="/add_keg" render={()=><AddKeg callback={this.addKegToList}/>} />
+              <Route exact path="/" render={()=><KegList kegs={this.state.kegs} soldPint={this.soldPint} />} />
+              <Route path="/employee/add_keg" render={()=><AddKeg callback={this.addKegToList}/>} />
             </Switch>
           </div>
         </BrowserRouter>

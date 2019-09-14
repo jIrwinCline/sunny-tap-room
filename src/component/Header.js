@@ -12,7 +12,6 @@ export default function Header() {
   return (
     <div>
       <img src={headerPic} alt='Header Picture' style={picStyle} />
-      <HeaderNavbar/>
     </div>
   );
 }
