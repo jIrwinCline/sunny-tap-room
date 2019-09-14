@@ -12,7 +12,7 @@ export default class KegList extends Component {
       <div className="row">
         {this.props.kegs.map((keg, index) =>
            <KegDisplay keg={keg} index={index}
-           soldPint={this.props.soldPint}
+           soldPint={this.props.soldPint} 
            refillKeg={this.props.refillKeg}
            key={v4()}/>
          )}
