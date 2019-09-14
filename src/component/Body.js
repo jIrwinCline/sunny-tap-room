@@ -104,16 +104,25 @@ export default class Body extends Component {
     }
   }
 
+
+
   addKegToList = (keg) => {
     let temp = this.state.kegs.slice();
     temp.push(keg);
     this.setState({ kegs: temp })
   }
 
+
   soldPint = (id) => {
     let temp = this.state.kegs.slice();
-    temp[id].fill--;
-    this.setState({ kegs: temp })
+    if (temp[id].fill <= 1){
+      temp.splice(id,1)
+      this.setState({ kegs: temp })
+      console.log(temp);
+    } else {
+      temp[id].fill--;
+      this.setState({ kegs: temp })
+    }
   }
 
   refillKeg = (id) => {
