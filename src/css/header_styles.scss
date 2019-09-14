@@ -1,11 +1,15 @@
 .pic-styles {
-  width: 100%;
   height: auto;
+  max-width: 1500px;
+  height: auto;
+  box-sizing: border-box;
 }
 
 .header-container {
   position: relative;
   color: white;
+  overflow: hidden;
+  white-space:nowrap;
 }
 
 .header-text-top {

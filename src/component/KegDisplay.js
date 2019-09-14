@@ -13,12 +13,6 @@ export default class KegDisplay extends Component {
     this.props.soldPint(this.props.index)
   }
 
-  colorBasedOnPrice = () => {
-    switch(color){
-      case "green":
-      return "green"
-    }
-  }
 
   render() {
     const { name, brand, price, alcoholContent, fill, priceColor, id } = this.props.keg;
@@ -33,19 +27,17 @@ export default class KegDisplay extends Component {
     if (alcoholContent < 10) {
       return (
         <div style={cardStyles} className="col-sm-3">
-        <div className={"card " + priceColor} style={{ width: '18rem' }}>
-        <img class="card-img-top" style={{marginTop: '10px'}} src={keg} alt="keg image"/>
-        <div className="card-body">
-        <div className='card-title'><h6>{name}</h6></div>
-        <div className='card-text'><p>{brand}</p></div>
-        <div className='card-text'><p>{price}</p></div>
-        <div className='card-text'>
-        <p>{priceColor}</p>
-        <p>{fill}</p>
-        </div>
-        <button onClick={this.soldPint}>Sold Pint!</button>
-        </div>
-        </div>
+          <div className={"card " + priceColor} style={{ width: '18rem' }}>
+          <img class="card-img-top" style={{marginTop: '10px'}} src={keg} alt="keg image"/>
+            <div className="card-body">
+              <div className='card-title'><h6>{name}</h6></div>
+              <div className='card-text'><p>{brand}<br/>
+              {price + "$"}<br/>
+              {"Pints: " + fill}</p>
+              </div>
+              <button onClick={this.soldPint}>Sold Pint!</button>
+            </div>
+          </div>
         </div>
       );
     }else {
