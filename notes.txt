@@ -3,3 +3,5 @@ is running a function in the contructor bad form?
 I had syntax errors with my arrow functions on my first webpack, so I had to make a whole new webpack, what gives?
 
 Changing the routes for a small area, such as the navbar. I wanted to have nav options for customers and for employees separate
+
+how do I keep my state changed? everything reverts v]back to normal when I go home
