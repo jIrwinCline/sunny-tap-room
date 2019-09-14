@@ -32,9 +32,9 @@ var signStyles = {
 }
 
   return (
-    <div>
+    <div className='header-container'>
       <a style={logoStyle} href='/'><img style={logoStyle}  src={beerPic} /></a>
-      <Link to='/add_keg' style={aStyles} >Add a keg</Link>
+      <Link to='/employee/add_keg' style={aStyles} >Add a keg</Link>
       <a style={aStyles} onClick={props.filterByLowFill} href="#" >Low Kegs</a>
       <a style={aStyles} href='/'>Easy Drinkers</a>
 
